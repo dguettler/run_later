@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 
 	s.name = 'run_later'
-	s.version = '0.0.1'
+	s.version = '0.0.2'
 	s.authors = ['Mathias Meyer', 'Jens Kraemer']
 	s.summary = "port of Merb's run_later method to Rails."
 	s.description = 'Runs longer running tasks outside the current request thread, so that the request will return

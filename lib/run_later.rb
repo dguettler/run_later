@@ -17,6 +17,8 @@ ActionController::Base.send(:include, RunLater::InstanceMethods) if defined?(Act
 if defined?(ActiveRecord)
   ActiveRecord::Base.send(:include, RunLater::InstanceMethods)
   ActiveRecord::Base.extend(RunLater::InstanceMethods)
-  ActiveRecord::Observer.send(:include, RunLater::InstanceMethods)
-  ActiveRecord::Observer.extend(RunLater::InstanceMethods)
+  if defined?(ActiveRecord::Observer)
+    ActiveRecord::Observer.send(:include, RunLater::InstanceMethods)
+    ActiveRecord::Observer.extend(RunLater::InstanceMethods)
+  end
 end
