@@ -12,8 +12,6 @@ end
 
 if defined?(Rails)
   require 'active_support/all'
-  RUNLATER_LOGGER = Rails.logger
 else
   require 'active_support'
-  RUNLATER_LOGGER = @logger
 end

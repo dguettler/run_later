@@ -5,9 +5,6 @@ require 'run_later/cleanup'
 module RunLater
   if defined?(Rails)
     require 'run_later/railtie'
-    RUNLATER_LOGGER = Rails.logger
-  else
-    RUNLATER_LOGGER = ::RAILS_DEFAULT_LOGGER
   end
 end
 

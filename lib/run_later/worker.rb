@@ -5,8 +5,8 @@ module RunLater
     attr_accessor :thread
     cattr_accessor :logger
 
-    def initialize(logger = RUNLATER_LOGGER)
-      self.logger = logger
+    def initialize(logger = nil)
+      self.logger = logger || Logger.new(File.join(Rails.root, 'log/run_later.log'))
       @thread = Thread.new {
         trap :INT do
           RunLater::Worker.shutdown
